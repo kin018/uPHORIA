@@ -1,6 +1,10 @@
-﻿namespace uPhoriaClientAPI.Controllers
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace uPhoriaClientAPI.Controllers
 {
-    public class UsersController
+    [ApiController]
+    [Route("[controller]")]
+    public class UsersController : ControllerBase 
     {
     }
 }
