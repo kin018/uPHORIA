@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using uPhoriaClientAPI.Data;
 using uPhoriaClientAPI.Interfaces;
@@ -13,11 +14,15 @@ namespace uPhoriaClientAPI.Services
         public PostService(DataContext context)
         {
             _context = context;
-
         }
         public void CreatePost(Post post)
         {
-            throw new System.NotImplementedException();
+            if (post == null)
+            {
+                throw new ArgumentNullException(nameof(post));
+            }
+
+            _context.Posts.Add(post);
         }
 
         public IEnumerable<Post> GetAllPosts()
@@ -27,7 +32,7 @@ namespace uPhoriaClientAPI.Services
 
         public Post GetPostByID(int id)
         {
-            return _context.Posts.FirstOrDefault(p => p.postId == id);
+            return _context.Posts.FirstOrDefault(p => p.postId == id); //posID is equal to the id passed in
         }
 
         public bool Savechanges()
