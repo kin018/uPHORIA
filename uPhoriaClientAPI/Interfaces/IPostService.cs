@@ -7,7 +7,7 @@ namespace uPhoriaClientAPI.Interfaces
     {
         bool Savechanges();
 
-        IEnumerable<Post> GetAllPosts();       
+        IEnumerable<Post> GetAllPosts();
         Post GetPostByID(int id);
         void CreatePost(Post post);
     }
