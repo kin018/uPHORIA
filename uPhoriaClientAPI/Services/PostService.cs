@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using uPhoriaClientAPI.Data;
 using uPhoriaClientAPI.Interfaces;
 using uPhoriaClientAPI.Models;
@@ -21,7 +22,7 @@ namespace uPhoriaClientAPI.Services
 
         public IEnumerable<Post> GetAllPosts()
         {
-            throw new System.NotImplementedException();
+           return _context.Posts.ToList();
         }
 
         public Post GetPostByID(int id)
@@ -31,7 +32,7 @@ namespace uPhoriaClientAPI.Services
 
         public bool Savechanges()
         {
-            return (_context.SaveChanges () >= 0);
+            return (_context.SaveChanges() >= 0);
         }
     }
 }
