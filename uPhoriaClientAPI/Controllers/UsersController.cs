@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using uPhoriaClientAPI.Models;
 
 namespace uPhoriaClientAPI.Controllers
 {
-    [ApiController]
     [Route("[controller]")]
-    public class UsersController : ControllerBase 
+    [ApiController]
+    public class UsersController : ControllerBase
     {
+
     }
 }
