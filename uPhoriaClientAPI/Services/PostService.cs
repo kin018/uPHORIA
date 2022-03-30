@@ -31,7 +31,7 @@ namespace uPhoriaClientAPI.Services
 
         public bool Savechanges()
         {
-            throw new System.NotImplementedException();
+            return (_context.SaveChanges () >= 0);
         }
     }
 }
