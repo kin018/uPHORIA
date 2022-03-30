@@ -22,12 +22,12 @@ namespace uPhoriaClientAPI.Services
 
         public IEnumerable<Post> GetAllPosts()
         {
-           return _context.Posts.ToList();
+            return _context.Posts.ToList();
         }
 
         public Post GetPostByID(int id)
         {
-            throw new System.NotImplementedException();
+            return _context.Posts.FirstOrDefault(p => p.postId == id);
         }
 
         public bool Savechanges()
