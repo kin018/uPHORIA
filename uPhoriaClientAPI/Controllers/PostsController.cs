@@ -9,6 +9,6 @@ namespace uPhoriaClientAPI.Controllers
     [ApiController]    
     public class PostsController : ControllerBase
     {
-      public a      
+     public IActionResult<>
     }
 }
