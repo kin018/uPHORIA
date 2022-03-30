@@ -5,7 +5,10 @@ namespace uPhoriaClientAPI.Interfaces
 {
     public interface IPostService
     {
-        List<Post> GetAllPosts();
+        bool Savechanges();
+
+        IEnumerable<Post> GetAllPosts();       
         Post GetPostByID(int id);
+        void CreatePost(Post post);
     }
 }
