@@ -13,6 +13,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using uPhoriaClientAPI.Data;
+using uPhoriaClientAPI.Interfaces;
+using uPhoriaClientAPI.Services;
 
 namespace uPhoriaClientAPI
 {
@@ -31,6 +33,7 @@ namespace uPhoriaClientAPI
             services.AddDbContext<DataContext>(opt =>
                 opt.UseInMemoryDatabase("InMemDatabaseName"));
 
+            services.AddScoped<IPostService, PostService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
