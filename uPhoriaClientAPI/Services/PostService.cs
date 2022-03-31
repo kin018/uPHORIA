@@ -17,7 +17,7 @@ namespace uPhoriaClientAPI.Services
         }
         public void CreatePost(Post post)
         {
-            if (post == null)
+            if (post == null) 
             {
                 throw new ArgumentNullException(nameof(post));
             }
@@ -32,7 +32,7 @@ namespace uPhoriaClientAPI.Services
 
         public Post GetPostByID(int id)
         {
-            return _context.Posts.FirstOrDefault(p => p.postId == id); //posID is equal to the id passed in
+            return _context.Posts.FirstOrDefault(p => p.postId == id); //postID is equal to the id passed in
         }
 
         public bool Savechanges()
