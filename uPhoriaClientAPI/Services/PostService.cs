@@ -17,7 +17,7 @@ namespace uPhoriaClientAPI.Services
         }
         public void CreatePost(Post post)
         {
-            if (post == null) 
+            if (post == null)
             {
                 throw new ArgumentNullException(nameof(post));
             }
