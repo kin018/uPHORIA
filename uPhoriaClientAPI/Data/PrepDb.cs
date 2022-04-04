@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using uPhoriaClientAPI.Models;
 
 namespace uPhoriaClientAPI.Data
 {
@@ -21,7 +22,23 @@ namespace uPhoriaClientAPI.Data
             {
                 Console.WriteLine("--> ...Seeding Data... <--");
 
+                context.Posts.AddRange(
+                    new Post()
+                    {
+                        text = "Here is my first test post for the uPhoria platform",
+                    },
 
+                    new Post()
+                    {
+                        text = "Post 2 already...Think I am going to eat some ice cream after writing some code today",
+                    },
+
+                    new Post()
+                    {
+                        text = "3...That...is....all.....",
+                    }
+                    );
+                context.SaveChanges();
             }
             else
             {
