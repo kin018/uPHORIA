@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using System.Linq;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace uPhoriaClientAPI.Data
@@ -13,9 +15,18 @@ namespace uPhoriaClientAPI.Data
             }
         }
 
-        private static void SeedData(DataContext context)
+        private static void SeedData(DataContext context) //does seeding for all data and migrations 
         {
+            if (!context.Posts.Any()) //check if we have data in Database posts(from DataContext) (!=not operator) 
+            {
+                Console.WriteLine("--> ...Seeding Data... <--");
 
+
+            }
+            else
+            {
+                Console.WriteLine("--> Data is currently present <--");
+            }
         }
     }
 }
