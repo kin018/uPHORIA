@@ -66,6 +66,8 @@ namespace uPhoriaClientAPI
             {
                 endpoints.MapControllers();
             });
+
+            PrepDb.PrepPopulation(app); //calls PrepDb Method since its a static class
         }
     }
 }
