@@ -6,8 +6,10 @@ namespace uPhoriaClientAPI.DTOs.PostDTO
     {
         [Required]
         public int postId { get; set; }
+
         [Required]
         public int UserId { get; set; }
+
         [Required]
         public string text { get; set; }
     }
