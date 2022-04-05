@@ -35,6 +35,7 @@ namespace uPhoriaClientAPI
 
             services.AddScoped<IPostService, PostService>();
             services.AddControllers();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "uPhoriaClientAPI", Version = "v1", Description = "Api for uPhoria" });
