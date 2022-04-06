@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using uPhoriaClientAPI.Models;
-using System.Linq;
+using uPhoriaClientAPI.Interfaces;
 
 namespace uPhoriaClientAPI.Controllers
 {
@@ -9,6 +7,10 @@ namespace uPhoriaClientAPI.Controllers
     [ApiController]    
     public class PostsController : ControllerBase
     {
+        public PostsController(IPostService postrepository)
+        {
+
+        }
     
     }
 }
