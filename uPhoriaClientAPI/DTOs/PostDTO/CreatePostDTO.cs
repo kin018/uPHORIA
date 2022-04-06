@@ -3,8 +3,7 @@
 namespace uPhoriaClientAPI.DTOs.PostDTO
 {
     public class CreatePostDTO
-    {
-       
+    {       
         [Required]
         public string text { get; set; }
 
