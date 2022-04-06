@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using uPhoriaClientAPI.Interfaces;
 
 namespace uPhoriaClientAPI.Controllers
@@ -7,9 +8,13 @@ namespace uPhoriaClientAPI.Controllers
     [ApiController]    
     public class PostsController : ControllerBase
     {
-        public PostsController(IPostService postrepository)
-        {
+        private readonly IPostService _postrepository;
+        private readonly IMapper _mapper;
 
+        public PostsController(IPostService postrepository, IMapper mapper)
+        {
+            _postrepository = postrepository;
+            _mapper = mapper;
         }
     
     }

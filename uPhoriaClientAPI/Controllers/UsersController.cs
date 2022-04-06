@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using uPhoriaClientAPI.Interfaces;
 using uPhoriaClientAPI.Models;
@@ -9,9 +10,13 @@ namespace uPhoriaClientAPI.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        public UsersController(IUserService userrepository)
-        {
+        private readonly IUserService _userrepository;
+        private readonly IMapper _mapper;
 
+        public UsersController(IUserService userrepository, IMapper mapper)
+        {
+            _userrepository = userrepository;
+            _mapper = mapper;
         }
     }
 }
