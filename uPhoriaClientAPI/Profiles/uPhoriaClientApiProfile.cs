@@ -9,8 +9,8 @@ namespace uPhoriaClientAPI.Profiles
         public uPhoriaClientApiProfile()
         {
             //Source --> Target
-            CreateMap<Post, GetUserPostDTO>();
             CreateMap<Post, GetPostDTO>();
+            CreateMap<Post, GetUserPostDTO>();            
             CreateMap<GetPostDTO, Post>();
             CreateMap<CreatePostDTO, Post>();
         }

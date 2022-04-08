@@ -25,8 +25,21 @@ namespace uPhoriaClientAPI.Controllers
         {
             Console.WriteLine("--> ...Getting Posts... <--");
             var postItems = _postrepository.GetAllPosts();
-            return Ok(postItems);
+            return Ok(_mapper.Map<IEnumerable<GetPostDTO>>(postItems)); //mapped to GetPostDTO from the collection of model-->postItems
 
         }
+
+
+        //        [HttpGet("{id}", Name = "GetPlatformById")]
+        //        public ActionResult<PlatformReadDto> GetPlatformById(int id)
+        //        {
+        //            var platformItem = _postrepository.GetPlatformById(id);
+        //            if (platformItem != null)
+        //            {
+        //                return Ok(_mapper.Map<PlatformReadDto>(platformItem));
+        //            }
+
+        //            return NotFound();
+
     }
 }
