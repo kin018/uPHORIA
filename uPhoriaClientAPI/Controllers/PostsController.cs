@@ -7,6 +7,7 @@ using uPhoriaClientAPI.Interfaces;
 
 namespace uPhoriaClientAPI.Controllers
 {
+    //"api/[controller]"
     [Route("[controller]")]
     [ApiController]
     public class PostsController : ControllerBase
@@ -30,16 +31,15 @@ namespace uPhoriaClientAPI.Controllers
         }
 
 
-        //        [HttpGet("{id}", Name = "GetPlatformById")]
-        //        public ActionResult<PlatformReadDto> GetPlatformById(int id)
-        //        {
-        //            var platformItem = _postrepository.GetPlatformById(id);
-        //            if (platformItem != null)
-        //            {
-        //                return Ok(_mapper.Map<PlatformReadDto>(platformItem));
-        //            }
-
-        //            return NotFound();
-
+        [HttpGet("{id}", Name = "GetPostById")]
+        public ActionResult<GetPostDTO> GetPostByID(int id)
+        {
+            var postItem = _postrepository.GetPostByID(id);
+            if (postItem != null)
+            {
+                return Ok(_mapper.Map<GetPostDTO>(postItem));
+            }
+            return NotFound();
+        }
     }
 }
