@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using uPhoriaClientAPI.DTOs.PostDTO;
 using uPhoriaClientAPI.Interfaces;
+using uPhoriaClientAPI.Models;
 
 namespace uPhoriaClientAPI.Controllers
 {
@@ -40,6 +41,18 @@ namespace uPhoriaClientAPI.Controllers
                 return Ok(_mapper.Map<GetPostDTO>(postItem));
             }
             return NotFound();
+        }
+
+        [HttpPost]
+        public ActionResult<GetPostDTO> CreatePost(CreatePostDTO createPostDTO)
+        {
+            var postModel = _mapper.Map<Post>(createPostDTO);
+            _postrepository.CreatePost(postModel);
+            _postrepository.Savechanges();
+
+            var getPostDTO = _mapper.Map<GetPostDTO>(postModel);
+
+            return CreatedAtRoute(nameof(GetPostByID), new { PostId = getPostDTO.postId }, getPostDTO); //CreatedAtRoute
         }
     }
 }
