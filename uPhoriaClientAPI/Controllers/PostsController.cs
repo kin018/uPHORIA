@@ -54,5 +54,35 @@ namespace uPhoriaClientAPI.Controllers
 
             return CreatedAtRoute(nameof(GetPostByID), new { PostId = getPostDTO.postId }, getPostDTO); //CreatedAtRoute
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //[HttpDelete("{id}")] //DELETE api/commands/{id}
+        //public ActionResult DeleteCommand(int id)
+        //{
+        //    var commandModelFromRepo = _repository.GetCommmandById(id);
+        //    if (commandModelFromRepo == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    _repository.DeleteCommand(commandModelFromRepo);
+        //    _repository.SaveChanges();
+
+        //    return NoContent();
+        //}
     }
 }
