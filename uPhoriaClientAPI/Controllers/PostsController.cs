@@ -31,7 +31,6 @@ namespace uPhoriaClientAPI.Controllers
 
         }
 
-
         [HttpGet("{id}", Name = "GetPostById")]
         public ActionResult<GetPostDTO> GetPostByID(int id)
         {
@@ -50,7 +49,7 @@ namespace uPhoriaClientAPI.Controllers
             _postrepository.CreatePost(postModel);
             _postrepository.Savechanges();
 
-            var getPostDTO = _mapper.Map<GetPostDTO>(postModel);
+            var getPostDTO = _mapper.Map<GetPostDTO>(postModel);//
 
             return CreatedAtRoute(nameof(GetPostByID), new { PostId = getPostDTO.postId }, getPostDTO); //CreatedAtRoute
         }
