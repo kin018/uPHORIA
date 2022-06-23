@@ -55,21 +55,6 @@ namespace uPhoriaClientAPI.Controllers
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         //[HttpDelete("{id}")] //DELETE api/commands/{id}
         //public ActionResult DeleteCommand(int id)
         //{
