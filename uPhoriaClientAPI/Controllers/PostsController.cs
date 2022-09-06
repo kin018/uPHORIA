@@ -20,6 +20,7 @@ namespace uPhoriaClientAPI.Controllers
         {
             _postrepository = postrepository;
             _mapper = mapper;
+
         }
 
         [HttpGet("GetAll")]
@@ -27,7 +28,7 @@ namespace uPhoriaClientAPI.Controllers
         {
             Console.WriteLine("--> ...Getting Posts... <--");
             var postItems = _postrepository.GetAllPosts();
-            return Ok(_mapper.Map<IEnumerable<GetPostDTO>>(postItems)); //mapped to GetPostDTO from the collection of model-->postItems
+            return Ok(_mapper.Map<IEnumerable<GetPostDTO>>(postItems)); //mapped to GetPostDTO from the collection of model--> postItems
 
         }
 
@@ -67,6 +68,7 @@ namespace uPhoriaClientAPI.Controllers
         //    _repository.SaveChanges();
 
         //    return NoContent();
+
         //}
     }
 }
