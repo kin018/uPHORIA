@@ -5,7 +5,7 @@ namespace uPhoriaClientAPI.Models
     public class Post
     {
         [Key]
-        [Required]
+        [Required] //cannot be null if required key is present
         public int postId { get; set; }
 
         [Required]
