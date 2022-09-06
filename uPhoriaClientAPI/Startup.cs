@@ -30,8 +30,11 @@ namespace uPhoriaClientAPI
         //This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //For InMem database connection
             services.AddDbContext<DataContext>(opt =>
                 opt.UseInMemoryDatabase("InMemDatabaseName"));
+
+            //For SQL Server database connection---->  services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("SocialHubConnection")));
 
             services.AddScoped<IPostService, PostService>();
             services.AddControllers();
