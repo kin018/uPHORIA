@@ -11,6 +11,7 @@ namespace uPhoriaClientAPI.DTOs.PostDTO
         public int UserId { get; set; }
 
         [Required]
+        [MaxLength(250)]
         public string text { get; set; }
     }
 }

@@ -9,6 +9,7 @@ namespace uPhoriaClientAPI.Models
         public int postId { get; set; }
 
         [Required]
+        [MaxLength(250)]
         public string text { get; set; }
 
         [Required]

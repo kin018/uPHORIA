@@ -7,7 +7,7 @@ namespace uPhoriaClientAPI.Data
     {
         public DataContext(DbContextOptions<DataContext> opt) : base(opt)
         {
-
+            //
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Post> Posts { get; set; }
